@@ -21,3 +21,10 @@ imp <- mice(data, m = 5)
 
 # Completed data
 data_imp <- complete(imp)
+
+# Plot age distributions
+par(mfrow=c(1,2))
+hist(train$Age, freq=F, main='Age: Original Data', 
+     col='darkgreen', ylim=c(0,0.04))
+hist(data_imp$Age, freq=F, main='Age: MICE Output', 
+     col='lightgreen', ylim=c(0,0.04))
